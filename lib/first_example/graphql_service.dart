@@ -1,5 +1,5 @@
-import 'package:graph_ql/book_model.dart';
-import 'package:graph_ql/graphql_config.dart';
+import 'package:graph_ql/first_example/book_model.dart';
+import 'package:graph_ql/first_example/graphql_config.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class GraphQLService {
