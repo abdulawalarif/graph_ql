@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:graph_ql/chat_gpt/reading_countries/graphql_queries.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,12 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: Scaffold(
+        body: Center(child: Text("Hello world!"),),
       ),
-      home: const Scaffold(body: Center(child: Text("data"),),),
     );
   }
 }
