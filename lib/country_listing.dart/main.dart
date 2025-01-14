@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graph_ql/chat_gpt/reading_countries/graphql_queries.dart';
+import 'package:graph_ql/country_listing.dart/graphql_queries.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 void main() {
@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
+  /// for listening to changes on data endpoint
   final ValueNotifier<GraphQLClient> client = ValueNotifier<GraphQLClient>(
     GraphQLClient(
       cache: GraphQLCache(),
@@ -24,33 +24,35 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: CountryListPage(),
+        home: const CountryListPage(),
       ),
     );
   }
 }
 
 class CountryListPage extends StatelessWidget {
+  const CountryListPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Country List'),
+        title: const Text('Country List'),
       ),
       body: Query(
         options: GraphQLQueries.countryListOptions(),
         builder: (
-            QueryResult result, {
-              Refetch? refetch,
-              FetchMore? fetchMore,
-            }) {
+          QueryResult result, {
+          Refetch? refetch,
+          FetchMore? fetchMore,
+        }) {
           if (result.hasException) {
-            return Center(
+            return const Center(
               child: Text('Error fetching data'),
             );
           }
           if (result.isLoading) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -61,7 +63,6 @@ class CountryListPage extends StatelessWidget {
               final country = countries[index];
               return ListTile(
                 title: Text(country['name']),
-
               );
             },
           );
