@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:graph_ql/first_example/book_model.dart';
-import 'package:graph_ql/first_example/graphql_service.dart';
+import 'package:graph_ql/books_crud/book_model.dart';
+import 'package:graph_ql/books_crud/graphql_service.dart';
 
 
 void main() {
