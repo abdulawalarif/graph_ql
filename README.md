@@ -26,8 +26,7 @@
         ├── main.dart
 
 
-<img src="ProjectSnap/light_theme/1.1.jpg" width="15.3%" alt="details view of a products" />
-</br>
+ 
 
 
 ## Run Locally
